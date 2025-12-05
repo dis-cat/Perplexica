@@ -227,15 +227,15 @@ class MetaSearchAgent implements MetaSearchAgentType {
         } else {
           question = question.replace(/<think>.*?<\/think>/g, '');
 
-          // const res = await searchSearxng(question, {
-          //   language: 'en',
-          //   engines: this.config.activeEngines,
-          // });
-
-          const res = await searchLocalCorpus(question, {
+          const res = await searchSearxng(question, {
             language: 'en',
             engines: this.config.activeEngines,
           });
+
+          // const res = await searchLocalCorpus(question, {
+          //   language: 'en',
+          //   engines: this.config.activeEngines,
+          // });
 
           const documents = res.results.map(
             (result) =>
